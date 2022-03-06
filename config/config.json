@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "xnlgelwa",
+    "password": "HT7eE2UtxNVgwmwXYwZmCVKN3zQl7JMt",
+    "database": "xnlgelwa",
+    "host": "jelani.db.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "xnlgelwa",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "xnlgelwa",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
