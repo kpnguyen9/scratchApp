@@ -52,7 +52,7 @@ router.post("/login", async (req, res, next) => {
 
       res.cookie("userToken", token);
 
-      res.redirect("/profile");
+      res.redirect(`/profile/${user.id}`);
     } else {
       res.send("incorrect password, try again");
     }

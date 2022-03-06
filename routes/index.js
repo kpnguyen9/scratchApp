@@ -2,6 +2,7 @@ var express = require("express");
 const jwt = require("jsonwebtoken");
 var router = express.Router();
 require("dotenv").config();
+const { User } = require("../models");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -33,8 +34,16 @@ const isValidToken = (req, res, next) => {
   }
 };
 
-router.get("/profile", isValidToken, function (req, res, next) {
-  res.render("profile");
+router.get("/profile/:id", isValidToken, async function (req, res, next) {
+  const { id } = req.params;
+
+  const user = await User.findOne({
+    where: {
+      id: id,
+    },
+  });
+
+  res.render("profile", { name: user.username });
 });
 
 module.exports = router;
